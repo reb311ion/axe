@@ -1,681 +1,154 @@
-<!DOCTYPE html>
-<!-- saved from url=(0031)https://demo.ctfd.io/challenges -->
-<html>
+<!DOCTYPE html><html lang="en"><head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155394613-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <style class="darkreader darkreader--fallback" media="screen"></style>
-    <style class="darkreader darkreader--text" media="screen"></style>
-    <style class="darkreader darkreader--invert" media="screen"></style>
-    <style class="darkreader darkreader--inline" media="screen">
-        [data-darkreader-inline-bgcolor] {
-            background-color: var(--darkreader-inline-bgcolor) !important;
+	  gtag('config', 'UA-155394613-1');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+	<link rel="stylesheet" href="index.css">
+	<link rel="icon" href="/favicon.png" type="image/png">
+  </head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <div id="profile">	
+      <div id="profile_img" style="background: url(profile_NOT_FOUND.png) center;"></div>	
+    </div>
+    <div id="display">
+			<h1>Axe CTF</h1>
+            <div class="projects" > 
+                  <a href="./Challenges/ch1.gb" target="_blank">
+                    <section>
+                        <div class="section_title">GOI BOI</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; Learner</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/ch2.exe" target="_blank">
+                    <section>
+                        <div class="section_title">SM TEA GO</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; GEEK</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/ch3/ch3.zip" target="_blank">
+                    <section>
+                        <div class="section_title">CLUSTER</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; CRACKER</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/ch4.exe" target="_blank">
+                    <section>
+                        <div class="section_title">SNEAKY PETE</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; MANIPULATOR</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/ch5/ch5.pcap" target="_blank">
+                    <section>
+                        <div class="section_title">PECAPCHO</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; ANALYST</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/ch6.exe" target="_blank">
+                    <section>
+                        <div class="section_title">VIRTUAL JUNGLE</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; L337</span>                       
+                      </div>
+                    </section>
+                  </a>
+                  <a href="./Challenges/CH7.EXE" target="_blank">
+                    <section>
+                        <div class="section_title">MS-DUDE</div>
+                        <div class="bottom_section">
+                        <span><i class="fas fa-flag"></i>&nbsp; MILLENNIAL</span>                       
+                      </div>
+                    </section>
+                  </a>
+           
+			      </div>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("blog.json", function(blog) {
+        blog = blog || [];
+        if (blog.length == 0) {
+          return (document.getElementById("blog_section").style.display =
+            "none");
         }
-        
-        [data-darkreader-inline-bgimage] {
-            background-image: var(--darkreader-inline-bgimage) !important;
-        }
-        
-        [data-darkreader-inline-border] {
-            border-color: var(--darkreader-inline-border) !important;
-        }
-        
-        [data-darkreader-inline-border-bottom] {
-            border-bottom-color: var(--darkreader-inline-border-bottom) !important;
-        }
-        
-        [data-darkreader-inline-border-left] {
-            border-left-color: var(--darkreader-inline-border-left) !important;
-        }
-        
-        [data-darkreader-inline-border-right] {
-            border-right-color: var(--darkreader-inline-border-right) !important;
-        }
-        
-        [data-darkreader-inline-border-top] {
-            border-top-color: var(--darkreader-inline-border-top) !important;
-        }
-        
-        [data-darkreader-inline-boxshadow] {
-            box-shadow: var(--darkreader-inline-boxshadow) !important;
-        }
-        
-        [data-darkreader-inline-color] {
-            color: var(--darkreader-inline-color) !important;
-        }
-        
-        [data-darkreader-inline-fill] {
-            fill: var(--darkreader-inline-fill) !important;
-        }
-        
-        [data-darkreader-inline-stroke] {
-            stroke: var(--darkreader-inline-stroke) !important;
-        }
-        
-        [data-darkreader-inline-outline] {
-            outline-color: var(--darkreader-inline-outline) !important;
-        }
-        html {
-            background-color: #FFFFFF !important;
-        }
-        
-        html,
-        body,
-        input,
-        textarea,
-        select,
-        button {
-            background-color: #181a1b;
-        }
-        
-        html,
-        body,
-        input,
-        textarea,
-        select,
-        button {
-            border-color: #575757;
-            color: #e8e6e3;
-        }
-        
-        a {
-            color: #3391ff;
-        }
-        
-        table {
-            border-color: #4c4c4c;
-        }
-        
-        ::placeholder {
-            color: #bab5ab;
-        }
-        
-        ::selection {
-            background-color: #005ccc;
-            color: #ffffff;
-        }
-        
-        ::-moz-selection {
-            background-color: #005ccc;
-            color: #ffffff;
-        }
-        
-        input:-webkit-autofill,
-        textarea:-webkit-autofill,
-        select:-webkit-autofill {
-            background-color: #545b00 !important;
-            color: #e8e6e3 !important;
-        }
-        
-        ::-webkit-scrollbar {
-            background-color: #1c1e1f;
-            color: #c5c1b9;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background-color: #2a2c2e;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #323537;
-        }
-        
-        ::-webkit-scrollbar-thumb:active {
-            background-color: #3d4043;
-        }
-        
-        ::-webkit-scrollbar-corner {
-            background-color: #181a1b;
-        }
-        
-        * {
-            scrollbar-color: #2a2c2e #1c1e1f;
-        }
-        
-        img {
-          width: 100%;
-          height: auto;
-          border-style: none
-          vertical-align: middle
-        }
-
-        body {font-family: Arial, Helvetica, sans-serif;}
-
-        /* Full-width input fields */
-        input[type=text], input[type=password] {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          box-sizing: border-box;
-        }
-
-        /* Set a style for all buttons */
-        button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 14px 20px;
-          margin: 8px 0;
-          border: none;
-          cursor: pointer;
-          width: 100%;
-        }
-
-        button:hover {
-          opacity: 0.8;
-        }
-
-        /* Extra styles for the cancel button */
-        .cancelbtn {
-          width: auto;
-          padding: 10px 18px;
-          background-color: #f44336;
-        }
-
-        /* Center the image and position the close button */
-        .imgcontainer {
-          text-align: center;
-          margin: 24px 0 12px 0;
-          position: relative;
-        }
-
-        img.avatar {
-          width: 20%;
-          height: auto
-          border-radius: 50%;
-        }
-
-        .container {
-          padding: 16px;
-        }
-
-        span.psw {
-          float: right;
-          padding-top: 16px;
-        }
-
-        /* The Modal (background) */
-        .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
-          left: 0;
-          top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgb(0,0,0); /* Fallback color */
-          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-          padding-top: 60px;
-        }
-
-        /* Modal Content/Box */
-        .modal-content {
-          background-color: #fefefe;
-          margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-          border: 1px solid #888;
-          width: 80%; /* Could be more or less, depending on screen size */
-        }
-
-        /* The Close Button (x) */
-        .close {
-          position: absolute;
-          right: 25px;
-          top: 0;
-          color: #000;
-          font-size: 35px;
-          font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-          color: red;
-          cursor: pointer;
-        }
-
-        /* Add Zoom Animation */
-        .animate {
-          -webkit-animation: animatezoom 0.6s;
-          animation: animatezoom 0.6s
-        }
-
-        @-webkit-keyframes animatezoom {
-          from {-webkit-transform: scale(0)} 
-          to {-webkit-transform: scale(1)}
-        }
-          
-        @keyframes animatezoom {
-          from {transform: scale(0)} 
-          to {transform: scale(1)}
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-          span.psw {
-             display: block;
-             float: none;
-          }
-          .cancelbtn {
-             width: 100%;
-          }
-        }
-    </style>
-    <title>CTF - REB311ION</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/reb311ion/reb311ion.github.io/master/profile.png" type="image/x-icon">
-    <link rel="stylesheet" href="./Files/fonts.min.css">
-    <style class="darkreader darkreader--sync" media="screen"></style>
-    <link rel="stylesheet" href="./Files/main.min.css">
-    <style class="darkreader darkreader--sync" media="screen"></style>
-    <link rel="stylesheet" href="./Files/core.min.css">
-    <style class="darkreader darkreader--sync" media="screen"></style>
-    <link rel="stylesheet" href="./Files/challenge-board.min.css">
-    <style class="darkreader darkreader--sync" media="screen"></style>
-    <link rel="stylesheet" type="text/css" href="./Files/user.css">
-    <style class="darkreader darkreader--sync" media="screen"></style>
-</head>
-
-<body data-gr-c-s-loaded="true">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a href="https://ctf.reb311ion.com/" class="navbar-brand">CTF - REB311ION</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars" aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="base-navbars">
-            <ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
-		<li>
-		<a class="nav-link" href="https://www.github.com/reb311ion/axe">
-		<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="BLOG">
-		<i class="fas fa-sign-out-alt d-none d-md-block d-lg-none"></i>
-		</span>
-		<span class="d-sm-block d-md-none d-lg-block">
-		<i class="fas fa-sign-out-alt pr-1"></i>SOURCE CODE<span class="d-lg-none">BLOG</span>
-		</span>
-		</a>
-		</li>	    
-		<li class="nav-item">
-		<a class="nav-link" href="https://www.reb311ion.com">
-		<span class="d-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="BLOG">
-		<i class="fas fa-sign-out-alt d-none d-md-block d-lg-none"></i>
-		</span>
-		<span class="d-sm-block d-md-none d-lg-block">
-		<i class="fas fa-sign-out-alt pr-1"></i>BLOG<span class="d-lg-none">BLOG</span>
-		</span>
-		</a>
-		</li>
-            </ul>
-            </div>
-    </nav>
-    <main role="main">
-        <div class="container">
-            <div id="challenges-board">
-                <div id="-1615787847-row" class="pt-5">
-                    <div class="category-header col-md-12 mb-3">
-                        <h3>Reverse Engineering</h3></div>
-                    <div class="category-challenges col-md-12">
-                        <div class="challenges-row col-md-12">
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2" onclick="document.getElementById('ch1').style.display='block'">
-                                    <img src="Challenges/ch1.gif"  height="200" width="200">
-                                    <span><p>
-                                    <p>GOI BOI</p><span><i class="fas fa-flag"></i>&nbsp; LEARNER</span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2" onclick="document.getElementById('ch2').style.display='block'">
-                                    <img src="Challenges/ch2.gif"  height="200" width="200">
-                                    <span><p>                                    
-                                    <p>SM TEA GO</p><span><i class="fas fa-flag"></i>&nbsp; GEEK</span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2" onclick="document.getElementById('ch3').style.display='block'">
-                                    <img src="Challenges/ch3.gif"  height="200" width="200">
-                                    <span><p>                                    
-                                    <p>CLUSTER</p><span><i class="fas fa-flag"></i>&nbsp; CRACKER</span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2" onclick="document.getElementById('ch4').style.display='block'">
-                                    <img src="Challenges/ch4.gif"  height="200" width="200">
-                                    <span><p>                                   
-                                    <p>SNEAKY PETE</p><span><i class="fas fa-flag"></i>&nbsp; MANIPULATOR </span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2" onclick="document.getElementById('ch5').style.display='block'">
-                                    <img src="Challenges/ch5.gif"  height="200" width="200">
-                                    <span><p>                                    
-                                    <p>PECAPCHO</p><span><i class="fas fa-flag"></i>&nbsp; ANALYST</span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"  onclick="document.getElementById('ch6').style.display='block'" >
-                                    <img src="Challenges/ch6.gif"  height="200" width="200">
-                                    <span><p>                                  
-                                    <p>VIRTUAL JUNGLE</p><span><i class="fas fa-flag"></i>&nbsp; L337</span>
-                                </button>
-                            </div>
-                            <div class="col-md-3 d-inline-block">
-                                <button class="btn btn-dark challenge-button w-100 text-truncate pt-3 pb-3 mb-2"  onclick="document.getElementById('ch7').style.display='block'" >
-                                    <img src="Challenges/ch7.gif"  height="200" width="200">
-                                    <span><p>                                  
-                                    <p>MS-DUDE</p><span><i class="fas fa-flag"></i>&nbsp; MILLENNIAL</span>
-                                </button>
-                            </div>
+        for (var i = 0; i < blog.length; i++) {
+          $("#blogs").append(`
+            <a href="./blog/${blog[i].url_title}/" target="_blank">
+                <section>
+                    <img src="/blog/${blog[i].url_title}/${blog[i].top_image}">
+                    <div class="blog_container">
+                        <div class="section_title">${blog[i].title}</div>
+                        <div class="about_section">
+                            ${blog[i].sub_title}
                         </div>
                     </div>
-                </div>
-        </div>
-    </main>
-
-    <div id="ch1" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch1').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch1.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-         
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch1s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch1s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch1.gb')">CH1.GB</button>
-        </div>
-      </form>
-    </div>
-
-    <div id="ch2" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch2').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch2.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-        
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch2s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch2s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch2.exe')">CH2.EXE</button>
-        </div>
-
-      </form>
-    </div>
-
-    <div id="ch3" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch3').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch3.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-        
-        
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch3s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch3s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch3/index.html')">CH3 </button>
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch3/ch3.zip')">SRC</button>
-        </div>
-
-      </form>
-    </div>
-
-    <div id="ch4" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch4').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch4.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch4s" required>
-          <button type="button" onclick="var i = document.getElementById('ch4s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch4.exe')">CH4.EXE</button>
-        </div>
-
-      </form>
-    </div>
-
-    <div id="ch5" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch5').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch5.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-         
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch5s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch5s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch5/ch5.pcap')">CH5.PCAP</button>
-        </div>
-      </form>
-    </div>
-
-    <div id="ch6" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch6').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch6.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-         
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch6s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch6s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/ch6.exe')">CH6.EXE</button>
-        </div>
-      </form>
-    </div>
-    <div id="ch7" class="modal">
-      <form class="modal-content animate">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('ch7').style.display='none'" class="close" title="Close">&times;</span>
-          <img src="Challenges/ch7.gif" alt="Avatar" class="avatar" height="200" width="200">
-        </div>
-         
-        <div class="container">
-          <label for="flag"><b>Flag</b></label>
-          <input type="text" placeholder="REB{XXX}" name="flag" id="ch7s" required>
-            
-          <button type="button" onclick="var i = document.getElementById('ch7s').value;check(i);">Submit</button>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-             <button type="button" class="cancelbtn" onclick="window.open('./Challenges/CH7.EXE')">CH7.EXE</button>
-        </div>
-      </form>
-    </div>
-
-    
-    <script>
-        var modal = document.getElementById('ch1');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+                </section>
+            </a>
+            `);
         }
+      }).fail(function() {
+        return (document.getElementById("blog_section").style.display = "none");
+      });
     </script>
+
     <script>
-        var modal = document.getElementById('ch2');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+      const magicProjectsGrid = new MagicGrid({
+        container: "#work_section",
+        animate: false,
+        gutter: 30, // default gutter size
+        static: true,
+        useMin: false,
+        maxColumns: 2,
+        useTransform: true
+      });
+
+      const magicForksGrid = new MagicGrid({
+        container: "#forks_section",
+        animate: false,
+        gutter: 30, // default gutter size
+        static: true,
+        useMin: false,
+        maxColumns: 2,
+        useTransform: true
+      });
+
+      $("document").ready(() => {
+        magicProjectsGrid.listen();
+        magicForksGrid.listen();
+      });
     </script>
-    <script>
-        var modal = document.getElementById('ch3');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        var modal = document.getElementById('ch4');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        var modal = document.getElementById('ch5');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        var modal = document.getElementById('ch6');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-		flags = ['be949666f5c37689d26d5913f3acfac83638186cba61715b8d3fcef75167e5e9',
-				 '132ebee94c592403d3405fbf0bf11d2ef6841b1d986998f5247a6085aac358a0',
-				 '319f9b5f098a0f8976c953169aa1294b4f2747bb8388a69db3241900fd6d20cf',
-				 '2df2b6127fd5c70482a4e8ba84861505d04e3391daf8127790091233365d4e60',
-				 '383acf4f8bb74d93f3e95ec25dc136a4b0af9837b7b3c2ae05201485a365432f',
-				 'dc74d64e20e8adf79e2fee4aac53ec0a61f0738180570920318ffc868eafe766',
-				 '6e4a216bc81bddd6dcd13aa11207fc54363f58588591a6dff98cc01061846c40']
-
-    	function check(ascii){
-    		var flagsLen = flags.length;
-    		var wrong = 1;
-			for (var i = 0; i < flagsLen; i++) {
-	    		if(sha256(ascii) == flags[i]){
-	    			alert('Perfect!!!');
-	    			wrong = 0;
-	    		}
-	    	}
-	    	if(wrong){
-	    		alert("Try Hrader...");
-	    	}
-    	}
-		var sha256 = function sha256(ascii) {
-		function rightRotate(value, amount) {
-			return (value>>>amount) | (value<<(32 - amount));
-		};
-
-		var mathPow = Math.pow;
-		var maxWord = mathPow(2, 32);
-		var lengthProperty = 'length'
-		var i, j; // Used as a counter across the whole file
-		var result = ''
-
-		var words = [];
-		var asciiBitLength = ascii[lengthProperty]*8;
-
-		//* caching results is optional - remove/add slash from front of this line to toggle
-		// Initial hash value: first 32 bits of the fractional parts of the square roots of the first 8 primes
-		// (we actually calculate the first 64, but extra values are just ignored)
-		var hash = sha256.h = sha256.h || [];
-		// Round constants: first 32 bits of the fractional parts of the cube roots of the first 64 primes
-		var k = sha256.k = sha256.k || [];
-		var primeCounter = k[lengthProperty];
-		/*/
-		var hash = [], k = [];
-		var primeCounter = 0;
-		//*/
-
-		var isComposite = {};
-		for (var candidate = 2; primeCounter < 64; candidate++) {
-			if (!isComposite[candidate]) {
-				for (i = 0; i < 313; i += candidate) {
-					isComposite[i] = candidate;
-				}
-				hash[primeCounter] = (mathPow(candidate, .5)*maxWord)|0;
-				k[primeCounter++] = (mathPow(candidate, 1/3)*maxWord)|0;
-			}
-		}
-
-		ascii += '\x80' // Append Ƈ' bit (plus zero padding)
-		while (ascii[lengthProperty]%64 - 56) ascii += '\x00' // More zero padding
-		for (i = 0; i < ascii[lengthProperty]; i++) {
-			j = ascii.charCodeAt(i);
-			if (j>>8) return; // ASCII check: only accept characters in range 0-255
-			words[i>>2] |= j << ((3 - i)%4)*8;
-		}
-		words[words[lengthProperty]] = ((asciiBitLength/maxWord)|0);
-		words[words[lengthProperty]] = (asciiBitLength)
-
-		// process each chunk
-		for (j = 0; j < words[lengthProperty];) {
-			var w = words.slice(j, j += 16); // The message is expanded into 64 words as part of the iteration
-			var oldHash = hash;
-			// This is now the undefinedworking hash", often labelled as variables a...g
-			// (we have to truncate as well, otherwise extra entries at the end accumulate
-			hash = hash.slice(0, 8);
-			
-			for (i = 0; i < 64; i++) {
-				var i2 = i + j;
-				// Expand the message into 64 words
-				// Used below if 
-				var w15 = w[i - 15], w2 = w[i - 2];
-
-				// Iterate
-				var a = hash[0], e = hash[4];
-				var temp1 = hash[7]
-					+ (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) // S1
-					+ ((e&hash[5])^((~e)&hash[6])) // ch
-					+ k[i]
-					// Expand the message schedule if needed
-					+ (w[i] = (i < 16) ? w[i] : (
-							w[i - 16]
-							+ (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15>>>3)) // s0
-							+ w[i - 7]
-							+ (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2>>>10)) // s1
-						)|0
-					);
-				// This is only used once, so *could* be moved below, but it only saves 4 bytes and makes things unreadble
-				var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) // S0
-					+ ((a&hash[1])^(a&hash[2])^(hash[1]&hash[2])); // maj
-				
-				hash = [(temp1 + temp2)|0].concat(hash); // We don't bother trimming off the extra ones, they're harmless as long as we're truncating when we do the slice()
-				hash[4] = (hash[4] + temp1)|0;
-			}
-			
-			for (i = 0; i < 8; i++) {
-				hash[i] = (hash[i] + oldHash[i])|0;
-			}
-		}
-
-		for (i = 0; i < 8; i++) {
-			for (j = 3; j + 1; j--) {
-				var b = (hash[i]>>(j*8))&255;
-				result += ((b < 16) ? 0 : '') + b.toString(16);
-			}
-		}
-		return result;
-		};
-    </script>
-
-</body>
-</html>
+ 
+</body></html>
